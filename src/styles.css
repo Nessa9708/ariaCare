@@ -345,3 +345,29 @@ button { min-height: 42px; touch-action: manipulation; }
     bottom: calc(96px + env(safe-area-inset-bottom));
   }
 }
+
+/* Mobile browser toolbar clearance: keep app nav above Chrome/Samsung browser bottom bar */
+@media (max-width: 460px) {
+  .bottom-nav {
+    bottom: calc(86px + env(safe-area-inset-bottom));
+  }
+  .screen {
+    padding-bottom: calc(235px + env(safe-area-inset-bottom));
+  }
+  .toast {
+    bottom: calc(170px + env(safe-area-inset-bottom));
+  }
+}
+
+/* If installed as a PWA/home-screen app, use the lower native-app style */
+@media (max-width: 460px) and (display-mode: standalone) {
+  .bottom-nav {
+    bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+  .screen {
+    padding-bottom: calc(150px + env(safe-area-inset-bottom));
+  }
+  .toast {
+    bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+}
